@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Michael and Edison screaming.wav-a409b668c2f6453b7c68ebc9b51a0d24.sample"
+
+[deps]
+
+source_file="res://assets/Michael and Edison screaming.wav"
+dest_files=[ "res://.import/Michael and Edison screaming.wav-a409b668c2f6453b7c68ebc9b51a0d24.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -10,7 +10,7 @@ var levels = [
 		"moves":20,
 		"goal": [{ "piece":"Red", "max":5, "count":0 }],
 		"level": "Level 1",
-		"instructions": "Match 5 red tiles"
+		"instructions": "Match 5 paimon tiles"
 	}
 	,{
 		"unlocked": true,
@@ -19,8 +19,30 @@ var levels = [
 		"moves":20,
 		"goal": [{ "piece":"Red", "max":5, "count":0 },{ "piece":"Blue", "max":5, "count":0 }],
 		"level": "Level 2",
-		"instructions": "Match 5 red tiles and 5 blue tiles"
+		"instructions": "Match 5 paimon tiles and 5 Xiao tiles"
+		
+		
 	}
+	,{
+		"unlocked": true,
+		"high score": 0,
+		"stars unlocked": 0,
+		"moves":30,
+		"goal": [{ "piece":"Red", "max":15, "count":0 },{ "piece":"Blue", "max":15, "count":0 },{ "piece":"Green", "max":5, "count":0 }],
+		"level": "Level 3",
+		"instructions": "Match 15 paimon tiles, 15 Xiao tiles, and 5 Itto tiles"
+	}
+	,{
+		"unlocked": true,
+		"high score": 0,
+		"stars unlocked": 0,
+		"moves":50,
+		"goal": [{ "piece":"Red", "max":25, "count":0 },{ "piece":"Blue", "max":30, "count":0 },{ "piece":"Green", "max":15, "count":0 }],
+		"level": "Level 4",
+		"instructions": "Match 25 paimon tiles,30 Itto tiles, and 15 Xiao tiles"
+		
+	}
+	
 ]
 
 

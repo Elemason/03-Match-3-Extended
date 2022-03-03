@@ -18,12 +18,29 @@ var default_z = z_index
 const max_z = 4095
 
 var dying = false
+var wiggle = 0.0
+export var wiggle_amount = 1.5
+
+export var transparent_time = 1.0
+export var scale_time = 1.5
+export var rot_time = 1.5
 
 func _ready():
+	wiggle = randf()
 	default_modulate = modulate
 	target_position = position
+	var sound = get_node_or_null("/root/Game/Sounds/Spawn")
+	if sound != null:
+		sound.playing = true
+	else:
+		sound = get_node_or_null("/root/Game/Sounds/Spawn")
+		if sound != null:
+			sound.playing = true
+	
 
 func _physics_process(_delta):
+	wiggle += 0.1
+	position.x = position.x + (sin(wiggle)*wiggle_amount)
 	if dying:
 		queue_free()
 	if selected:
@@ -44,6 +61,13 @@ func _physics_process(_delta):
 func move(change):
 	target_position = change
 	position = target_position
+	var sound = get_node_or_null("/root/Game/Sounds/Move")
+	if sound != null:
+		sound.playing = true
+	else:
+		sound = get_node_or_null("/root/Game/Sounds/Move")
+		if sound != null:
+			sound.playing = true
 
 func dim():
 	pass
@@ -64,6 +88,19 @@ func make_color_bomb():
 func die():
 	dying = true
 	Global.update_goals(piece)
+	$Tween.interpolate_property(self, "modulate:a", 1, 0, transparent_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$Tween.start()
+	$Tween.interpolate_property(self, "scale", scale, Vector2(3,3), scale_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$Tween.start()
+	$Tween.interpolate_property($Sprite, "rotation",rotation, (randf()*4*PI)-2*PI, rot_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$Tween.start()
+	var sound = get_node_or_null("/root/Game/Sounds/Die")
+	if sound != null:
+		sound.playing = true
+	else:
+		sound = get_node_or_null("/root/Game/Sounds/Die")
+		if sound != null:
+			sound.playing = true
 
 
 func constrain(xy):

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Elayne Screaming.wav-bd6c0bff2c70bec9239971c9732d5762.sample"
+
+[deps]
+
+source_file="res://assets/Elayne Screaming.wav"
+dest_files=[ "res://.import/Elayne Screaming.wav-bd6c0bff2c70bec9239971c9732d5762.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
